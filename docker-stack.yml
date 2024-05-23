@@ -29,6 +29,9 @@ services:
       - frontend
     deploy:
       replicas: 2
+      placement:
+        constraints:
+          - node.hostname == node2
 
   result:
     image: dockersamples/examplevotingapp_result
